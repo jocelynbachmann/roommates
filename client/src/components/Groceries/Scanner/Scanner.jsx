@@ -95,6 +95,7 @@ export default function Scanner({ isOpen, onClose, type }) {
               p='4'
               alignItems='flex-start'
               justifyContent='space-between'
+              overflowY='auto'
             >
               <Flex align='center'>
                 <Image
@@ -103,17 +104,17 @@ export default function Scanner({ isOpen, onClose, type }) {
                       ? sampleReceiptImage
                       : sampleGroceriesImage
                   }
-                  w='100%'
+                  w='60%'
                   maxW='35vh'
                   objectFit='contain'
                   mb='4'
                 />
                 {type === 'Receipt' && (
                   <>
-                    <Icon as={ArrowForwardIcon} boxSize={8} mx={4} />
+                    <Icon as={ArrowForwardIcon} boxSize={5} mx={2} />
                     <Image
                       src={croppedReceiptImage}
-                      w='100%'
+                      w='30%'
                       maxW='30vh'
                       objectFit='contain'
                       mb='4'
