@@ -1,7 +1,7 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 import { Circles } from 'react-loader-spinner';
 
-export const PageLoader = () => {
+export const PageLoader = ({ isTakingTooLong = false }) => {
   return (
     <Box
       position="absolute"
@@ -13,6 +13,7 @@ export const PageLoader = () => {
       display="flex"
       alignItems="center"
       justifyContent="center"
+      flexDirection="column"
     >
       <Circles
         height="80"
@@ -21,6 +22,11 @@ export const PageLoader = () => {
         ariaLabel="circles-loading"
         visible={true}
       />
+      {isTakingTooLong && (
+        <Text mt={6} color="teal" fontSize="lg" fontWeight="bold" textAlign="center">
+          The server is taking longer than usual to respond. This may be due to the server spinning up after being idle. Please wait a moment.
+        </Text>
+      )}
     </Box>
   );
 };
